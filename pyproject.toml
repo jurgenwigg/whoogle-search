@@ -3,20 +3,28 @@ name = "whoogle-search"
 description = "Self-hosted, ad-free, privacy-respecting metasearch engine"
 readme = "README.md"
 requires-python = ">=3.9"
-license = {file = "LICENSE"}
-authors = [
-  {name = "Ben Busby", email = "contact@benbusby.com" }
-]
-maintainers = [
-    {name = "jurgenwigg", email = "jurgenwigg@protonmail.com" }
-]
+license = { file = "LICENSE" }
+authors = [{ name = "Ben Busby", email = "contact@benbusby.com" }]
+maintainers = [{ name = "jurgenwigg", email = "jurgenwigg@protonmail.com" }]
 
-dependencies = []
+dependencies = [
+    "beautifulsoup4",
+    "brotli",
+    "cssutils",
+    "cryptography",
+    "defusedxml",
+    "Flask",
+    "python-dotenv",
+    "requests",
+    "stem",
+    "validators",
+    "waitress",
+]
 dynamic = ["version"]
 
 [project.optional-dependencies]
 dev = ["black", "isort", "pylint", "tox", "pytest"]
-test = ["pytest", "pytest-cov", "black", "pylint", "tox"]
+test = ["pytest", "pytest-cov", "python-dateutil", "black", "pylint", "tox"]
 build = ["build"]
 
 [build-system]
